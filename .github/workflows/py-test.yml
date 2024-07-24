@@ -1,0 +1,14 @@
+# This workflow will trigger a series of tests for our python functions
+
+name: CI Test Python Functions
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    

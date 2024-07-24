@@ -1,0 +1,15 @@
+{
+  "name": "fullstack",
+  "version": "0.1.0",
+  "description": "A fullstack application made by NUPAT DevOps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NUPAT-DevOps",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "yarn": "^1.22.22"
+  }
+}
