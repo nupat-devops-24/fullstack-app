@@ -4,11 +4,22 @@ name: CI Test Python Functions
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+  
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          apt-get update && \
+          apt-get install nano
+
+      
     
