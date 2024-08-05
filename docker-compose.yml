@@ -1,0 +1,24 @@
+# This file is designed for production server deployment, not local development work.
+# For a containerized local dev environment, see: https://github.com/...
+
+version: '3.8'
+
+services:
+  app:
+    build: .
+    command: npm start
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production # TO-DO: Implement the '''if (process.env.NODE_ENV === 'production')''' in the js app.
+  
+  db:
+    image: mongo
+    volumes:
+      - app_db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root # TO-DO: set environment varibles as ARGs
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+volumes:
+  app_db:
