@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    #working_directory: /app/src
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ..:/app:cached
+  
+  mongo: 
+    image: mongo
+    volumes:
+      - fullstack-mongodb:/data/db
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE: dev-db
+  
+volumes:
+  fullstack-mongodb
